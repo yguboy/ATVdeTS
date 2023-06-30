@@ -24,20 +24,4 @@ export class DespesaController {
     return res.status(200).json({ Message : "LIstagem de despesas concluida!", dados : despesas });
   }
 
-  async total(req : Request,  res : Response) : Promise<Response>{
-    let resultadoSoma : number;
-    let  despesas = await prisma.despesa.findMany({
-      where:{
-        preco : Number.parseInt(req.params.preco),
-      }
-    });
-    const i : number;
-   despesas.map((despesa : any) => {
-    despesa.preco + despesa.preco == resultadoSoma;
-   })
-
-   
-    return res.status(200).json({Message : "tudo certo!", dados : resultadoSoma})
-
-  }
 }
